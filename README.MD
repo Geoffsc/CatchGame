@@ -3,8 +3,11 @@ This is a simple Catch the Falling Items web game written in Rust using WebAssem
 
 # Install dependencies
 rustup target add wasm32-unknown-unknown
+
 cargo install wasm-bindgen-cli
+
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
 cargo build
 
 # Build and Run
