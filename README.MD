@@ -1,4 +1,5 @@
-# Catch the Falling Items web game
+# About
+This is a simple Catch the Falling Items web game written in Rust using WebAssembly
 
 # Install dependencies
 rustup target add wasm32-unknown-unknown
