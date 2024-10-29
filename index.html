@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catch the Falling Items</title>
+    <script type="module">
+        import init, { Game } from "./pkg/catch_game.js";
+
+        async function run() {
+            await init();
+            const game = new Game("gameCanvas");
+
+            // Game loop
+            function gameLoop() {
+                game.update();
+                requestAnimationFrame(gameLoop);
+            }
+            gameLoop();
+
+            // Handle keyboard input
+            window.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowLeft") game.move_basket("left");
+                if (event.key === "ArrowRight") game.move_basket("right");
+            });
+        }
+        run();
+    </script>
+</head>
+<body>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <p>
+        <a href="https://geoffsc.github.io/" target=0>Home</a>&nbsp;&nbsp;&nbsp;<a href="https://geoffsc.github.io/" target=0>Github</a>
+    </p>
+</body>
+</html>
